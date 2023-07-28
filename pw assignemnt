@@ -1,0 +1,47 @@
+Seaborn
+Assignment Questions 
+Assignment 
+Que 1: Name any five plots that we can plot using the Seaborn library. Also, state the uses of each plot. 
+ Scatter Plot: Use: Scatter plots are used to visualize the relationship between two continuous variables.
+Bar Plot: Use: Bar plots are used to compare categorical data and show the distribution of a categorical variable
+Histogram: Use: Histograms are used to visualize the distribution of a single continuous variable.
+Box Plot (Box-and-Whisker Plot): Use: Box plots are used to summarize the distribution of a continuous variable across different categories
+Heatmap: Use: Heatmaps are used to visualize the relationships between two categorical variables or a categorical and a continuous variable
+
+Que 2: Load the "fmri" dataset using the load_dataset function of seaborn. Plot a line plot using x =  "timepoint" and y = "signal" for different events and regions.  
+import seaborn as sb
+data=sb.load_dataset('fmri')
+sb.lineplot(x=data.timepoint,y=data.signal)  
+
+Note:  timepoint, signal, event, and region are columns in the fmri dataset. 
+Que 3: Load the "titanic" dataset using the load_dataset function of seaborn. Plot two box plots using x =  'pclass', y = 'age' and y = 'fare'. 
+Note:  pclass, age, and fare are columns in the titanic dataset. 
+data1=sb.load_dataset('titanic')
+
+
+sb.boxplot(x=data1.pclass,y=data1.fare)
+
+
+sb.boxplot(x=data1.pclass,y=data1.age)
+
+Que 4: Use the "diamonds" dataset from seaborn to plot a histogram for the 'price' column. Use the hue  parameter for the 'cut' column of the diamonds dataset.  
+data2=sb.load_dataset('diamonds')
+data2
+
+
+sb.histplot(x=data2.price,hue=data2.cut)
+
+Que 5: Use the "iris" dataset from seaborn to plot a pair plot. Use the hue parameter for the "species" column  of the iris dataset.  
+data3=sb.load_dataset('iris')
+Data3
+sb.pairplot(data3,hue='species')
+
+
+
+Que 6: Use the "flights" dataset from seaborn to plot a heatmap. 
+data5=sb.load_dataset('flights')
+flights_pivot = data5.pivot_table(index='month', columns='year', values='passengers')
+sb.heatmap(flights_pivot,linewidths=0.5,fmt='d',cmap='Accent',annot=True)
+
+Note:  Create your assignment in Jupyter notebook and upload it in GitHub & share that github   repository link through your dashboard. Make sure the repository is public.
+Data Science Masters 
